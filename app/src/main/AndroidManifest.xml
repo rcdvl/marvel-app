@@ -27,20 +27,20 @@
             </intent-filter>
         </activity>
 
-        <!-- <activity android:name=".characterdetails.CharacterDetailsActivity" -->
-        <!-- android:label="" -->
-        <!-- android:parentActivityName=".MainActivity" -->
-        <!-- android:theme="@style/AppTheme.Transparent"> -->
+        <activity android:name=".characterdetails.CharacterDetailsActivity"
+                  android:label=""
+                  android:parentActivityName=".MainActivity"
+                  android:theme="@style/AppTheme.Transparent">
 
 
-        <!-- <meta-data -->
-        <!-- android:name="android.support.PARENT_ACTIVITY" -->
-        <!-- android:value=".MainActivity"/> -->
-        <!-- </activity> -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity"/>
+        </activity>
 
 
-        <!-- <activity android:name=".resourcedetails.ResourceDetailsActivity" -->
-        <!-- android:label=""/> -->
+        <activity android:name=".resourcedetails.ResourceDetailsActivity"
+                  android:label=""/>
     </application>
 
 </manifest>

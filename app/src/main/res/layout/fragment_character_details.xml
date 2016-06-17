@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
             xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
@@ -10,171 +11,136 @@
 
         <ImageView
             android:id="@+id/backgroundImage"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignBottom="@+id/contentLayout"
-            android:layout_alignLeft="@+id/contentLayout"
-            android:layout_alignRight="@+id/contentLayout"
-            android:layout_alignTop="@+id/contentLayout"/>
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:contentDescription="@string/description_background_image"/>
+
+        <com.rcdvl.marvel.util.DiagonalCroppedRelativeLayout
+            android:id="@+id/header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.rcdvl.marvel.util.DiagonalDividerImageView
+                android:id="@+id/characterImage"
+                android:layout_width="match_parent"
+                android:layout_height="285dp"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="285dp"
+                android:background="@drawable/list_item_character_gradient"/>
+
+            <TextView
+                android:id="@+id/characterName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/characterImage"
+                android:layout_marginBottom="36dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginStart="16dp"
+                android:textColor="@android:color/white"
+                android:textSize="22sp"
+                tools:text="Hulk"/>
+        </com.rcdvl.marvel.util.DiagonalCroppedRelativeLayout>
 
         <LinearLayout
-            android:id="@+id/contentLayout"
+            android:id="@+id/descriptionContainer"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:focusable="true"
-            android:focusableInTouchMode="true"
+            android:layout_below="@id/header"
+            android:layout_marginLeft="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/title_description"
+                android:textColor="@color/colorAccent"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/characterDescription"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginTop="8dp"
+                android:text="@string/lorem"
+                android:textColor="@android:color/white"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/comicsContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/descriptionContainer"
+            android:layout_marginLeft="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="40dp"
+            android:orientation="vertical">
+
+            <FrameLayout
+                android:id="@+id/comicsListContainer"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/seriesContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/comicsContainer"
+            android:layout_marginLeft="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:orientation="vertical">
+
+            <FrameLayout
+                android:id="@+id/seriesListContainer"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/storiesContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/seriesContainer"
+            android:layout_marginLeft="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:orientation="vertical">
+
+            <FrameLayout
+                android:id="@+id/storiesListContainer"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/eventsContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/storiesContainer"
+            android:layout_marginLeft="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:orientation="vertical">
+
+            <FrameLayout
+                android:id="@+id/eventsListContainer"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/eventsContainer"
             android:orientation="vertical"
             android:paddingBottom="44dp">
-
-            <com.rcdvl.marvel.util.DiagonalCroppedRelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <com.rcdvl.marvel.util.DiagonalDividerImageView
-                    android:id="@+id/characterImage"
-                    android:layout_width="match_parent"
-                    android:layout_height="285dp"/>
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="285dp"
-                    android:background="@drawable/list_item_character_gradient"/>
-
-                <TextView
-                    android:id="@+id/characterName"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignBottom="@id/characterImage"
-                    android:layout_marginBottom="36dp"
-                    android:layout_marginLeft="16dp"
-                    android:layout_marginStart="16dp"
-                    android:text="Hulk"
-                    android:textColor="@android:color/white"
-                    android:textSize="22sp"/>
-            </com.rcdvl.marvel.util.DiagonalCroppedRelativeLayout>
-
-            <LinearLayout
-                android:id="@+id/descriptionContainer"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="16dp"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="8dp"
-                android:orientation="vertical">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Description"
-                    android:textColor="@color/colorAccent"
-                    android:textStyle="bold"/>
-
-                <TextView
-                    android:id="@+id/descriptionText"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="16dp"
-                    android:layout_marginRight="16dp"
-                    android:layout_marginTop="8dp"
-                    android:text="@string/lorem"
-                    android:textColor="@android:color/white"/>
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/comicsContainer"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="16dp"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="40dp"
-                android:orientation="vertical">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Comics"
-                    android:textColor="@color/colorAccent"
-                    android:textStyle="bold"/>
-
-                <android.support.v7.widget.RecyclerView
-                    android:id="@+id/comicsList"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginTop="16dp"
-                    android:scrollbars="vertical"/>
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/seriesContainer"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="16dp"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="16dp"
-                android:orientation="vertical">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Series"
-                    android:textColor="@color/colorAccent"
-                    android:textStyle="bold"/>
-
-                <android.support.v7.widget.RecyclerView
-                    android:id="@+id/seriesList"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginTop="16dp"
-                    android:scrollbars="vertical"/>
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/storiesContainer"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="16dp"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="16dp"
-                android:orientation="vertical">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Stories"
-                    android:textColor="@color/colorAccent"
-                    android:textStyle="bold"/>
-
-                <android.support.v7.widget.RecyclerView
-                    android:id="@+id/storiesList"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginTop="16dp"
-                    android:scrollbars="vertical"/>
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/eventsContainer"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="16dp"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="16dp"
-                android:orientation="vertical">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Events"
-                    android:textColor="@color/colorAccent"
-                    android:textStyle="bold"/>
-
-                <android.support.v7.widget.RecyclerView
-                    android:id="@+id/eventsList"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginTop="16dp"
-                    android:scrollbars="vertical"/>
-            </LinearLayout>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -182,7 +148,7 @@
                 android:layout_marginLeft="16dp"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="40dp"
-                android:text="Related links"
+                android:text="@string/title_related_links"
                 android:textColor="@color/colorAccent"
                 android:textStyle="bold"/>
 
@@ -195,7 +161,8 @@
                 android:gravity="center_vertical"
                 android:paddingLeft="16dp"
                 android:paddingStart="16dp"
-                android:text="Detail"
+                android:tag="detail"
+                android:text="@string/link_detail"
                 android:textColor="@android:color/white"
                 android:textStyle="bold"
                 app:textAllCaps="true"/>
@@ -213,7 +180,8 @@
                 android:gravity="center_vertical"
                 android:paddingLeft="16dp"
                 android:paddingStart="16dp"
-                android:text="Wiki"
+                android:tag="wiki"
+                android:text="@string/link_wiki"
                 android:textColor="@android:color/white"
                 android:textStyle="bold"
                 app:textAllCaps="true"/>
@@ -231,12 +199,11 @@
                 android:gravity="center_vertical"
                 android:paddingLeft="16dp"
                 android:paddingStart="16dp"
-                android:text="Comiclink"
+                android:tag="comiclink"
+                android:text="@string/link_comiclink"
                 android:textColor="@android:color/white"
                 android:textStyle="bold"
                 app:textAllCaps="true"/>
-
         </LinearLayout>
-
     </RelativeLayout>
 </ScrollView>

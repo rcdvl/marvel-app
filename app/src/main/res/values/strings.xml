@@ -1,4 +1,25 @@
 <resources>
     <string name="app_name">Marvel Characters</string>
     <string name="lorem">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed mauris est, condimentum eu eros ut, tempor pharetra velit. Maecenas pellentesque pretium tellus, eget facilisis dui posuere sit amet. Integer hendrerit nec sapien sed cursus</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="retry">Retry</string>
+    <string name="network_loading_error">Network error while loading characters</string>
+    <string name="title_description">Description</string>
+    <string name="title_comics">Comics</string>
+    <string name="title_series">Series</string>
+    <string name="title_stories">Stories</string>
+    <string name="title_events">Events</string>
+    <string name="title_related_links">Related links</string>
+    <string name="link_detail">Detail</string>
+    <string name="link_wiki">Wiki</string>
+    <string name="link_comiclink">Comiclink</string>
+    <string name="description_background_image">Background image</string>
+    <string name="generic_error">An error has occurred! click here to retry</string>
+    <string name="empty_comics">No comics found</string>
+    <string name="empty_stories">No stories found</string>
+    <string name="empty_events">No events found</string>
+    <string name="empty_series">No series found</string>
+    <string name="link_not_found">Link not found</string>
 </resources>

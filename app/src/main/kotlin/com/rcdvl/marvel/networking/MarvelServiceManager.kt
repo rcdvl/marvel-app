@@ -12,8 +12,8 @@ import java.security.MessageDigest
  */
 object MarvelServiceManager {
 
-    val PRIVATE_KEY = "<private-key-here>"
-    val PUBLIC_KEY = "<public-key-here>"
+    val PRIVATE_KEY = "dc98340d8cb75c45da21aeda74307654495a02ec"
+    val PUBLIC_KEY = "9f4304ed3ae9b31cd40baa37b6e11027"
 
     val okHttpClient: OkHttpClient = OkHttpClient.Builder().addInterceptor { chain ->
 
